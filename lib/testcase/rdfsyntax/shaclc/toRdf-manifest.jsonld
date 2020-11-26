@@ -1,0 +1,149 @@
+{
+  "@context": ["context.jsonld", {"@base": "toRdf-manifest"}],
+  "@id": "",
+  "@type": "mf:Manifest",
+  "name": "Transform SHACLC to RDF",
+  "description": "These tests implement the requirements for the [SHACLC syntax](https://w3c.github.io/shacl/shacl-compact-syntax/).",
+  "baseIri": "https://github.com/w3c/data-shapes/tree/gh-pages/shacl-compact-syntax/tests/valid",
+  "sequence": [
+    {
+      "@id": "#t0001",
+      "name": "Array with in constraint",
+      "purpose": "Tests to see if arrays are correctly handled",
+      "input": "array-in.shaclc",
+      "expect": "array-int.ttl"
+    }, {
+      "@id": "#t0002",
+      "name": "Basic (empty) shape; named with full IRI",
+      "purpose": "Tests to see basic shapes with no properties can be handled",
+      "input": "basic-shape-iri.shaclc",
+      "expect": "basic-shape-iri.ttl"
+    }, {
+      "@id": "#t0003",
+      "name": "Basic (single target) shape",
+      "purpose": "Tests to see basic shapes with a target and no properties",
+      "input": "basic-shape-iri-with-target.shaclc",
+      "expect": "basic-shape-iri-with-target.ttl"
+    }, {
+      "@id": "#t0004",
+      "name": "Basic (multiple targets target) shape",
+      "purpose": "Tests to see basic shapes with multiples targets and no properties",
+      "input": "basic-shape-iri-with-targets.shaclc",
+      "expect": "basic-shape-iri-with-targets.ttl"
+    }, {
+      "@id": "#t0005",
+      "name": "Basic (empty) shape named with prefixed IRI",
+      "purpose": "Tests a basic shape named with prefixed only",
+      "input": "basic-shape.shaclc",
+      "expect": "basic-shape-iri.ttl"
+    }, {
+      "@id": "#t0006",
+      "input": "class.shaclc",
+      "expect": "class.ttl"
+    }, {
+      "@id": "#t0007",
+      "input": "comment.shaclc",
+      "expect": "comment.ttl"
+    }, {
+      "@id": "#t0008",
+      "input": "complex1.shaclc",
+      "expect": "complex1.ttl"
+    }, {
+      "@id": "#t0009",
+      "input": "complex2.shaclc",
+      "expect": "complex2.ttl"
+    }, {
+      "@id": "#t0010",
+      "input": "count-0-1.shaclc",
+      "expect": "count-0-1.ttl"
+    }, {
+      "@id": "#t0011",
+      "input": "count-0-unlimited.shaclc",
+      "expect": "count-0-unlimited.ttl"
+    }, {
+      "@id": "#t0012",
+      "input": "count-1-2.shaclc",
+      "expect": "count-1-2.ttl"
+    }, {
+      "@id": "#t0013",
+      "input": "count-1-unlimited.shaclc",
+      "expect": "count-1-unlimited.ttl"
+    }, {
+      "@id": "#t0014",
+      "input": "datatype.shaclc",
+      "expect": "datatype.ttl"
+    }, {
+      "@id": "#t0015",
+      "input": "directives.shaclc",
+      "expect": "directives.ttl"
+    }, {
+      "@id": "#t0016",
+      "input": "empty.shaclc",
+      "expect": "empty.ttl"
+    }, {
+      "@id": "#t0017",
+      "input": "nestedShape.shaclc",
+      "expect": "nestedShape.ttl"
+    }, {
+      "@id": "#t0018",
+      "input": "node-or-2.shaclc",
+      "expect": "node-or-2.ttl"
+    }, {
+      "@id": "#t0019",
+      "input": "node-or-3-not.shaclc",
+      "expect": "node-or-3-not.ttl"
+    }, {
+      "@id": "#t0020",
+      "input": "nodeKind.shaclc",
+      "expect": "nodeKind.ttl"
+    }, {
+      "@id": "#t0021",
+      "input": "path-alternative.shaclc",
+      "expect": "path-alternative.ttl"
+    }, {
+      "@id": "#t0022",
+      "input": "path-complex.shaclc",
+      "expect": "path-complex.ttl"
+    }, {
+      "@id": "#t0023",
+      "input": "path-inverse.shaclc",
+      "expect": "path-inverse.ttl"
+    }, {
+      "@id": "#t0024",
+      "input": "path-oneOrMore.shaclc",
+      "expect": "path-oneOrMore.ttl"
+    }, {
+      "@id": "#t0025",
+      "input": "path-sequence.shaclc",
+      "expect": "path-sequence.ttl"
+    }, {
+      "@id": "#t0026",
+      "input": "path-zeroOrMore.shaclc",
+      "expect": "path-zeroOrMore.ttl"
+    }, {
+      "@id": "#t0027",
+      "input": "path-zeroOrOne.shaclc",
+      "expect": "path-zeroOrOne.ttl"
+    }, {
+      "@id": "#t0028",
+      "input": "property-empty.shaclc",
+      "expect": "property-empty.ttl"
+    }, {
+      "@id": "#t0029",
+      "input": "property-not.shaclc",
+      "expect": "property-not.ttl"
+    }, {
+      "@id": "#t0030",
+      "input": "property-or-2.shaclc",
+      "expect": "property-or-2.ttl"
+    }, {
+      "@id": "#t0031",
+      "input": "property-or-3.shaclc",
+      "expect": "property-or-3.ttl"
+    }, {
+      "@id": "#t0032",
+      "input": "shapeRef.shaclc",
+      "expect": "shapeRef.ttl"
+    }
+  ]
+}

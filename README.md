@@ -1,9 +1,5 @@
 # RDF-Test-Suite.js
 
-[![Build Status](https://travis-ci.org/rubensworks/rdf-test-suite.js.svg?branch=master)](https://travis-ci.org/rubensworks/rdf-test-suite.js)
-[![Coverage Status](https://coveralls.io/repos/github/rubensworks/rdf-test-suite.js/badge.svg?branch=master)](https://coveralls.io/github/rubensworks/rdf-test-suite.js?branch=master)
-[![npm version](https://badge.fury.io/js/rdf-test-suite.svg)](https://www.npmjs.com/package/rdf-test-suite)
-
 This tool executes the [RDF](https://www.w3.org/TR/rdf11-testcases/)
 and [SPARQL](https://w3c.github.io/rdf-tests/sparql11/) test suites
 with any given system.
@@ -13,6 +9,7 @@ or it can output machine-readable reports in the
 [EARL](https://www.w3.org/TR/EARL10-Schema/) vocabulary.
 
 Currently, the following test suites are supported:
+
 * [SPARQL 1.0](https://w3c.github.io/rdf-tests/sparql11/data-r2/)
 * [SPARQL 1.1](http://w3c.github.io/rdf-tests/sparql11/data-sparql11/) (_only [SPARQL 1.1 Query](http://www.w3.org/TR/sparql11-query/) spec_)
 * [RDF/XML](http://w3c.github.io/rdf-tests/rdf-xml/)
@@ -23,12 +20,14 @@ Currently, the following test suites are supported:
 * [JSON-LD (1.0 and 1.1)](https://w3c.github.io/json-ld-api/tests/)
 * [RDFa](http://rdfa.info/test-suite/)
 * [Microdata to RDF](https://w3c.github.io/microdata-rdf/tests/)
+* [SHACLC](https://github.com/w3c/data-shapes/tree/gh-pages/shacl-compact-syntax/tests)
 
 Not all [RDF test suites](https://w3c.github.io/rdf-tests/) are supported at the moment.
 However, this package is fully _modular_,
 so that support for different test cases can be implemented easily.
 
 Planned support:
+
 * [SPARQL 1.1](http://w3c.github.io/rdf-tests/sparql11/data-sparql11/) (_other specifications_)
 * [RDF Schema and Semantics](https://w3c.github.io/rdf-tests/rdf-mt/reports/)
 * [JSON-LD](https://w3c.github.io/json-ld-api/tests/) (_other test suites_)
@@ -74,6 +73,7 @@ An example of what this `myengine.js` looks like
 is available for the [Comunica SPARQL engine](https://github.com/comunica/comunica/tree/master/packages/actor-init-sparql/spec/sparql-engine.js).
 
 This command will output something like this:
+
 ```
 ...
 ✔ syn-bad-pname-04 (http://www.w3.org/2009/sparql/docs/tests/data-sparql11/syntax-query/manifest#test_pn_bad_04) 0.293588ms
@@ -130,6 +130,7 @@ As EARL reports require some metadata on your engine,
 you will need to provide a properties file via the `-p` argument.
 
 This properties file can look something like this:
+
 ```json
 {
   "applicationBugsUrl": "https://github.com/comunica/comunica/issues",
@@ -192,6 +193,7 @@ so that all files only have to be looked up once.
 $ rdf-test-suite myengine.js http://w3c.github.io/rdf-tests/sparql11/data-sparql11/manifest-all.ttl \
   -c path/to/cache/
 ```
+
 _If you don't provide a caching value after the `-c`,
 then the directory will default to `.rdf-test-suite-cache/`._
 
@@ -249,7 +251,7 @@ $ rdf-test-suite myengine.js http://w3c.github.io/rdf-tests/sparql11/data-sparql
 ## Supported test suites
 
 | Manifest | Specification | Interface | Entry manifest |
-| -------- | ------------- | --------- | -------------- |
+| - | - | - | - |
 | [SPARQL 1.0 tests](https://w3c.github.io/rdf-tests/sparql11/data-r2/) | [SPARQL 1.0](https://www.w3.org/TR/rdf-sparql-query/) | [`IQueryEngine`](https://github.com/rubensworks/rdf-test-suite.js/blob/master/lib/testcase/sparql/IQueryEngine.ts) | https://w3c.github.io/rdf-tests/sparql11/data-r2/manifest.ttl |
 | [SPARQL 1.1 tests](http://w3c.github.io/rdf-tests/sparql11/data-sparql11/) | [SPARQL 1.1 Query](http://www.w3.org/TR/sparql11-query/) | [`IQueryEngine`](https://github.com/rubensworks/rdf-test-suite.js/blob/master/lib/testcase/sparql/IQueryEngine.ts) | http://w3c.github.io/rdf-tests/sparql11/data-sparql11/manifest-all.ttl |
 | [SPARQL 1.1 tests](http://w3c.github.io/rdf-tests/sparql11/data-sparql11/) | [SPARQL 1.1 Update](http://www.w3.org/TR/sparql11-update/) | ✖ | http://w3c.github.io/rdf-tests/sparql11/data-sparql11/manifest-all.ttl |
@@ -270,8 +272,12 @@ $ rdf-test-suite myengine.js http://w3c.github.io/rdf-tests/sparql11/data-sparql
 | [JSON-LD Test Suite](https://w3c.github.io/json-ld-api/tests/) | [JSON-LD (1.0 and 1.1)](https://www.w3.org/TR/json-ld/) | [`ISerializer`](https://github.com/rubensworks/rdf-test-suite.js/blob/master/lib/testcase/rdfsyntax/ISerializer.ts) | https://w3c.github.io/json-ld-api/tests/fromRdf-manifest.jsonld |
 | [RDFa Test Suite](http://rdfa.info/test-suite/) | [RDFa 1.1](https://www.w3.org/TR/html-rdfa/) | [`IParser`](https://github.com/rubensworks/rdf-test-suite.js/blob/master/lib/testcase/rdfsyntax/IParser.ts) | http://rdfa.info/test-suite/test-cases/rdfa1.1/html5/manifest.ttl |
 | [Microdata to RDF Test Suite](https://w3c.github.io/microdata-rdf/tests/) | [Microdata to RDF](https://w3c.github.io/microdata-rdf/) | [`IParser`](https://github.com/rubensworks/rdf-test-suite.js/blob/master/lib/testcase/rdfsyntax/IParser.ts) | https://w3c.github.io/microdata-rdf/tests/manifest.ttl |
+| [SHACLC Test Suite](https://github.com/w3c/data-shapes/tree/gh-pages/shacl-compact-syntax/tests) | [SHACLC](https://w3c.github.io/shacl/shacl-compact-syntax/) | [`IParser`](https://github.com/rubensworks/rdf-test-suite.js/blob/master/lib/testcase/rdfsyntax/IParser.ts) | https://github.com/rubensworks/rdf-test-suite.js/blob/master/lib/testcase/rdfsyntax/shaclc/fromRdf-manifest.jsonld |
+| [SHACLC Test Suite](https://github.com/w3c/data-shapes/tree/gh-pages/shacl-compact-syntax/tests) | [SHACLC](https://w3c.github.io/shacl/shacl-compact-syntax/) | [`IParser`](https://github.com/rubensworks/rdf-test-suite.js/blob/master/lib/testcase/rdfsyntax/IParser.ts) | https://github.com/rubensworks/rdf-test-suite.js/blob/master/lib/testcase/rdfsyntax/shaclc/toRdf-manifest.jsonld |
 
 ## License
+
 This software is written by [Ruben Taelman](http://rubensworks.net/).
 
 This code is released under the [MIT license](http://opensource.org/licenses/MIT).
+
